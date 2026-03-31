@@ -46,8 +46,8 @@ export default function Hero() {
             >
               {/* Heading */}
               <h1 className="text-[36px] md:text-[60px] font-bold tracking-tight text-text-deep leading-[1.2] md:leading-[68px] mb-[40px]">
-                가족간병 <span className="text-primary">보험금 지급 청구</span> <br />
-                쉽고 편하게 도와드립니다
+                가족간병 <br /><span className="text-primary">보험금 지급 청구</span> <br />
+                쉽고 편하게
               </h1>
 
               {/* Subheader */}
