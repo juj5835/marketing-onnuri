@@ -53,8 +53,8 @@ export default function Hero() {
 
               {/* Subheader */}
               <p className="text-base md:text-lg text-text-body font-medium leading-[1.6] md:leading-[29px] mb-[40px] max-w-xl">
-                온누리케어 간병인협회는 가족 간병인 등록부터 보험 청구를 위한 <br className="hidden md:block" />
-                서류 발급, 설계사 전송 서비스까지 통합적으로 지원합니다
+                가족간병 보험청구방법, 가장 쉽고 빠른 길을 안내합니다. <br className="hidden md:block" />
+                가족 간병인 등록부터 서류 발급, 설계사 전송까지 온누리케어가 통합 지원합니다.
               </p>
 
               {/* CTA Button */}
