@@ -45,9 +45,9 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {/* Heading */}
-              <h1 className="text-[40px] md:text-[60px] font-bold tracking-tight text-text-deep leading-[1.1] md:leading-[68px] mb-[40px]">
-                가족 간병을 <br />
-                <span className="text-primary">전문적인 돌봄</span>으로 <br />
+              <h1 className="text-[36px] md:text-[60px] font-bold tracking-tight text-text-deep leading-[1.2] md:leading-[68px] mb-[40px]">
+                가족간병비 <span className="text-primary">보험금 청구</span> <br />
+                전문적인 돌봄으로 <br />
                 인정받으세요
               </h1>
 
