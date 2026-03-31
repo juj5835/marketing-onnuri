@@ -44,7 +44,8 @@ export default function Workflow() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex items-center transition-all bg-white"
               style={{
-                width: '600px',
+                maxWidth: '600px',
+                width: '100%',
                 padding: '16px',
                 gap: '24px',
                 borderRadius: '21px',
