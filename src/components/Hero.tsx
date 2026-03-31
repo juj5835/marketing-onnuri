@@ -16,17 +16,17 @@ export default function Hero() {
       }}>
         {/* Background Image Container - Centered 1200px Area */}
         <div
-          className="absolute inset-0 z-0 flex justify-end pointer-events-none max-w-[1200px]"
+          className="absolute inset-0 z-0 flex md:justify-end pointer-events-none md:max-w-[1200px]"
           style={{
             margin: '0 auto'
           }}
         >
-          <div className="max-w-[700px] w-full relative ">
+          <div className="w-full h-full md:max-w-[700px] relative ">
             <Image
               src="/images/hero_family_care_refined.png"
               alt="가족 간병 배경"
               fill
-              className="object-contain object-right"
+              className="object-cover object-center opacity-30 md:object-contain md:object-right md:opacity-100"
               style={{
                 maskImage: 'linear-gradient(to right, transparent, black 35%, black 85%, transparent)',
                 WebkitMaskImage: 'linear-gradient(to right, transparent, black 35%, black 85%, transparent)'
