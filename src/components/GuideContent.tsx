@@ -1,16 +1,14 @@
 "use client";
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { AlertCircle, Clock, FileText, UserPlus, Home } from 'lucide-react';
 
 const steps = [
   {
     title: '1. 간병 상황 발생',
-    desc: '연로하신 부모님, 어린 자녀, 혹은 배우자가 입원하여 가족의 손길이 꼭 필요한 상황이 발생합니다.',
+    desc: '연로하신 부모님, 어린 자녀, 혹은 배우자가 입원시 전문 간병인 대신 가족이 간병하는 상황이 발생합니다.',
     icon: <Home className="text-primary" size={24} />,
     details: ['가족(부모, 자녀, 배우자) 입원 시'],
-    img: '/images/hero_family_care_refined.png',
   },
   {
     title: '2. 간병인 등록 (필수)',
@@ -18,35 +16,31 @@ const steps = [
     icon: <UserPlus className="text-primary" size={24} />,
     isCritical: true,
     details: [
-      '중요: 등록 시점부터 보험 청구가 가능합니다.',
+      '중요: 간병인 등록 시점부터 보험 청구가 가능합니다.',
       '등록 이전의 간병 기간은 소급 적용되지 않습니다.',
       '간병인 정보, 환자 정보, 관계, 설계사 정보 등록'
     ],
-    img: '/images/hero_family_care_refined.png',
   },
   {
     title: '3. 입퇴원 서류 등록',
-    desc: '병원에서 발급받은 입퇴원 확인서 및 관련 서류를 등록합니다.',
+    desc: '퇴원후 병원에서 발급받은 입퇴원 확인서 및 관련 서류를 등록합니다.',
     icon: <FileText className="text-primary" size={24} />,
     details: ['입퇴원 증명서 및 병원 서류 등록'],
-    img: '/images/hero_family_care_refined.png',
   },
   {
     title: '4. 간병일지 작성',
-    desc: '정확한 간병 시간 증빙을 위해 매일 간병일지를 작성합니다.',
+    desc: '정확한 간병 시간 증빙을 위해 간병일지를 작성합니다.',
     icon: <Clock className="text-primary" size={24} />,
     details: [
       '하루 8시간 이상의 간병 기록 필수 (보험 혜택 기준)',
       '의료 기록과 일치해야 하며, 불일치 시 보장이 어려울 수 있음'
     ],
-    img: '/images/hero_family_care_refined.png',
   },
   {
     title: '5. 보험 청구 서류 전달',
     desc: '작성된 일지와 발급된 서류를 담당 보험 설계사에게 직접 전송하여 청구를 완료합니다.',
     icon: <AlertCircle className="text-primary" size={24} />,
     details: ['비대면 서류 전송 및 청구 접수 완료'],
-    img: '/images/hero_family_care_refined.png',
   },
 ];
 
@@ -118,16 +112,6 @@ export default function GuideContent() {
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                {/* Optional Image Section - hidden or secondary */}
-                <div className="hidden lg:block relative w-32 h-32 rounded-3xl overflow-hidden shrink-0 border border-[#FFEDD5]">
-                  <Image
-                    src={step.img}
-                    alt={step.title}
-                    fill
-                    className="object-cover opacity-40 group-hover:opacity-100 transition-opacity duration-500"
-                  />
                 </div>
               </div>
             </div>
