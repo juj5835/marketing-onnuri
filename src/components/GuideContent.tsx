@@ -12,7 +12,7 @@ const steps = [
     details: ['가족(부모, 자녀, 배우자) 입원 시'],
   },
   {
-    title: '2. 간병인 등록 (필수)',
+    title: '2. 간병인 등록 ',
     desc: '간병 업무를 시작하기 전 반드시 온누리케어에 간병인 등록을 완료해야 합니다.',
     icon: <UserPlus className="text-primary" size={24} />,
     isCritical: true,
@@ -89,10 +89,9 @@ export default function GuideContent() {
             className="group"
           >
             {/* Content Card */}
-            <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#FFEDD5] relative overflow-hidden transition-all hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)]">
-              {step.isCritical && (
-                <div className="absolute top-0 left-0 h-1.5 w-full bg-gradient-to-r from-orange-400 to-red-500" />
-              )}
+            <div className={`bg-white p-8 md:p-10 rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border relative overflow-hidden transition-all hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] ${
+              step.isCritical ? 'border-orange-400 border-2 bg-orange-50/10' : 'border-[#FFEDD5]'
+            }`}>
               
               <div className="flex flex-col md:flex-row md:items-start gap-6">
                 {/* Icon Section */}
@@ -106,11 +105,6 @@ export default function GuideContent() {
                     <h3 className="text-2xl font-black text-text-deep mb-2">
                       {step.title}
                     </h3>
-                    {step.isCritical && (
-                      <span className="inline-block px-3 py-1 bg-orange-50 text-orange-600 text-[11px] font-black rounded-full uppercase tracking-wider border border-orange-100">
-                        CRITICAL CHECK
-                      </span>
-                    )}
                   </div>
 
                   <p className="text-text-body text-lg font-medium leading-relaxed mb-8">
@@ -148,7 +142,7 @@ export default function GuideContent() {
           가족간병인 등록부터 서류 전송까지 <br />
           어플리케이션 안에서 원스톱으로 해결됩니다.
         </p>
-        <button 
+        <button
           onClick={() => window.location.href = '/'}
           className="px-14 h-16 bg-primary text-white rounded-2xl font-black text-lg hover:brightness-110 transition-all relative z-10 shadow-xl shadow-primary/20"
         >
