@@ -6,14 +6,14 @@ import { AlertCircle, Clock, FileText, UserPlus, Home } from 'lucide-react';
 
 const steps = [
   {
-    title: '간병 상황 발생',
+    title: '1. 간병 상황 발생',
     desc: '연로하신 부모님, 어린 자녀, 혹은 배우자가 입원하여 가족의 손길이 꼭 필요한 상황이 발생합니다.',
     icon: <Home className="text-primary" size={24} />,
     details: ['가족(부모, 자녀, 배우자) 입원 시'],
     img: '/images/hero_family_care_refined.png',
   },
   {
-    title: '간병인 등록 (필수)',
+    title: '2. 간병인 등록 (필수)',
     desc: '간병 업무를 시작하기 전 반드시 온누리케어에 간병인 등록을 완료해야 합니다.',
     icon: <UserPlus className="text-primary" size={24} />,
     isCritical: true,
@@ -25,14 +25,14 @@ const steps = [
     img: '/images/hero_family_care_refined.png',
   },
   {
-    title: '입퇴원 서류 등록',
+    title: '3. 입퇴원 서류 등록',
     desc: '병원에서 발급받은 입퇴원 확인서 및 관련 서류를 등록합니다.',
     icon: <FileText className="text-primary" size={24} />,
     details: ['입퇴원 증명서 및 병원 서류 등록'],
     img: '/images/hero_family_care_refined.png',
   },
   {
-    title: '간병일지 작성',
+    title: '4. 간병일지 작성',
     desc: '정확한 간병 시간 증빙을 위해 매일 간병일지를 작성합니다.',
     icon: <Clock className="text-primary" size={24} />,
     details: [
@@ -42,7 +42,7 @@ const steps = [
     img: '/images/hero_family_care_refined.png',
   },
   {
-    title: '보험 청구 서류 전달',
+    title: '5. 보험 청구 서류 전달',
     desc: '작성된 일지와 발급된 서류를 담당 보험 설계사에게 직접 전송하여 청구를 완료합니다.',
     icon: <AlertCircle className="text-primary" size={24} />,
     details: ['비대면 서류 전송 및 청구 접수 완료'],
@@ -52,15 +52,14 @@ const steps = [
 
 export default function GuideContent() {
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-3xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-16"
+        className="text-center mb-20"
       >
-
-        <h1 className="text-4xl md:text-6xl font-black text-text-deep leading-[1.1] mb-8">
+        <h1 className="text-4xl md:text-5xl font-black text-text-deep leading-[1.2] mb-8">
           가족 간병비 <br className="md:hidden" />
           보상 받는 법
         </h1>
@@ -70,7 +69,7 @@ export default function GuideContent() {
         </p>
       </motion.div>
 
-      <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/20 before:to-transparent">
+      <div className="space-y-8">
         {steps.map((step, idx) => (
           <motion.div
             key={idx}
@@ -78,49 +77,59 @@ export default function GuideContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group`}
+            className="group"
           >
-            {/* Dot */}
-            <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-[#FAF7F5] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 absolute left-0 md:left-1/2 top-0 mt-8 md:mt-0 md:top-1/2 md:-translate-y-1/2">
-              <div className="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
-            </div>
-
             {/* Content Card */}
-            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] ml-auto md:ml-0 bg-white p-8 rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#FFEDD5] relative overflow-hidden transition-all hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)]">
+            <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#FFEDD5] relative overflow-hidden transition-all hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)]">
               {step.isCritical && (
-                <div className="absolute top-0 right-0 h-2 w-full bg-gradient-to-r from-orange-400 to-red-500" />
+                <div className="absolute top-0 left-0 h-1.5 w-full bg-gradient-to-r from-orange-400 to-red-500" />
               )}
               
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center shrink-0">
+              <div className="flex flex-col md:flex-row md:items-start gap-6">
+                {/* Icon Section */}
+                <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center shrink-0">
                   {step.icon}
                 </div>
-                <div>
-                  <h3 className="text-xl font-black text-text-deep">
-                    {step.title}
-                  </h3>
-                  {step.isCritical && (
-                    <span className="text-[12px] font-black text-orange-500 uppercase tracking-tighter">
-                      CRITICAL CHECK
-                    </span>
-                  )}
+
+                {/* Text Section */}
+                <div className="flex-1">
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-black text-text-deep mb-2">
+                      {step.title}
+                    </h3>
+                    {step.isCritical && (
+                      <span className="inline-block px-3 py-1 bg-orange-50 text-orange-600 text-[11px] font-black rounded-full uppercase tracking-wider border border-orange-100">
+                        CRITICAL CHECK
+                      </span>
+                    )}
+                  </div>
+
+                  <p className="text-text-body text-lg font-medium leading-relaxed mb-8">
+                    {step.desc}
+                  </p>
+
+                  <ul className="space-y-4">
+                    {step.details.map((detail, dIdx) => (
+                      <li key={dIdx} className="flex items-start gap-3 text-[15px] font-medium text-text-muted">
+                        <div className="mt-2 h-1.5 w-1.5 rounded-full bg-primary/30 shrink-0" />
+                        <span className={detail.includes('중요') || detail.includes('필수') ? 'text-orange-600 font-bold' : ''}>
+                          {detail}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Optional Image Section - hidden or secondary */}
+                <div className="hidden lg:block relative w-32 h-32 rounded-3xl overflow-hidden shrink-0 border border-[#FFEDD5]">
+                  <Image
+                    src={step.img}
+                    alt={step.title}
+                    fill
+                    className="object-cover opacity-40 group-hover:opacity-100 transition-opacity duration-500"
+                  />
                 </div>
               </div>
-
-              <p className="text-text-body font-medium leading-relaxed mb-6">
-                {step.desc}
-              </p>
-
-              <ul className="space-y-3">
-                {step.details.map((detail, dIdx) => (
-                  <li key={dIdx} className="flex items-start gap-2 text-sm font-medium text-text-muted">
-                    <div className="mt-1.5 h-1 w-1 rounded-full bg-primary/40 shrink-0" />
-                    <span className={detail.includes('중요') || detail.includes('필수') ? 'text-orange-600 font-bold' : ''}>
-                      {detail}
-                    </span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </motion.div>
         ))}
@@ -130,21 +139,21 @@ export default function GuideContent() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="mt-20 p-8 rounded-[32px] bg-text-deep text-white text-center relative overflow-hidden"
+        className="mt-24 p-10 rounded-[40px] bg-text-deep text-white text-center relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-        <h2 className="text-2xl font-black mb-4 relative z-10">
-          지금 바로 온누리케어 가이드를 확인하세요
+        <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+        <h2 className="text-2xl md:text-3xl font-black mb-6 relative z-10">
+          온누리케어 가이드를 확인하세요
         </h2>
-        <p className="text-white/70 mb-8 relative z-10 max-w-md mx-auto">
+        <p className="text-white/70 text-lg mb-10 relative z-10 max-w-md mx-auto">
           가족간병인 등록부터 서류 전송까지 <br />
-          어플리케이션 내에서 원스톱으로 가능합니다.
+          어플리케이션 안에서 원스톱으로 해결됩니다.
         </p>
         <button 
           onClick={() => window.location.href = '/'}
-          className="px-12 h-16 bg-primary text-white rounded-2xl font-black text-lg hover:brightness-110 transition-all relative z-10 shadow-lg shadow-primary/20"
+          className="px-14 h-16 bg-primary text-white rounded-2xl font-black text-lg hover:brightness-110 transition-all relative z-10 shadow-xl shadow-primary/20"
         >
-          메인으로 이동
+          서비스 메인으로
         </button>
       </motion.div>
     </div>
