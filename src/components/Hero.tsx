@@ -1,12 +1,13 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { ArrowRight, X } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function Hero() {
-  const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
 
   return (
     <>
@@ -61,17 +62,17 @@ export default function Hero() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setShowModal(true)}
+                  onClick={() => router.push('/guide')}
                   className="flex items-center justify-center gap-3 bg-primary text-white font-black hover:brightness-105 transition-all shadow-[0px_25px_50px_-12px_rgba(230,126,34,0.4)]"
                   style={{
                     height: '68px',
-                    paddingLeft: '48px',
-                    paddingRight: '48px',
+                    paddingLeft: '40px',
+                    paddingRight: '40px',
                     fontSize: '20px',
                     borderRadius: '16px'
                   }}
                 >
-                  간병인 신청하기
+                  가족 간병비 보험 청구 방법
                   <ArrowRight size={20} className="stroke-[3px]" />
                 </motion.button>
               </div>
@@ -80,47 +81,7 @@ export default function Hero() {
         </div>
       </section>
 
-      <AnimatePresence>
-        {showModal && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/40 backdrop-blur-sm">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-md bg-white rounded-[32px] p-10 text-center shadow-2xl"
-            >
-              <button
-                onClick={() => setShowModal(false)}
-                className="absolute top-6 right-6 text-text-muted hover:text-text-deep transition-colors"
-                aria-label="Close"
-              >
-                <X size={24} />
-              </button>
 
-              <div className="w-20 h-20 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-8 text-4xl">
-                🚀
-              </div>
-
-              <h2 className="text-2xl font-black text-text-deep mb-4">
-                서비스 준비 중입니다!
-              </h2>
-
-              <p className="text-text-body text-lg leading-relaxed mb-10">
-                더욱 완벽한 서비스를 위해 <br />
-                열심히 준비하고 있습니다. <br />
-                <span className="text-primary font-bold">2026.08월</span>에 만나요!
-              </p>
-
-              <button
-                onClick={() => setShowModal(false)}
-                className="w-full h-16 bg-text-deep text-white rounded-[16px] font-bold hover:brightness-110 transition-all text-lg"
-              >
-                확인
-              </button>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </>
   );
 }
