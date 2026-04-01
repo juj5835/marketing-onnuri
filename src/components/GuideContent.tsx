@@ -2,19 +2,17 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { AlertCircle, Clock, FileText, UserPlus, Home, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 const steps = [
   {
     title: '1. 간병 상황 발생',
     desc: '연로하신 부모님, 어린 자녀, 혹은 배우자가 입원시 전문 간병인 대신 가족이 간병하는 상황이 발생합니다.',
-    icon: <Home className="text-primary" size={24} />,
     details: ['가족(부모, 자녀, 배우자) 입원 시'],
   },
   {
     title: '2. 간병인 등록 ',
     desc: '간병 업무를 시작하기 전 반드시 온누리케어에 간병인 등록을 완료해야 합니다.',
-    icon: <UserPlus className="text-primary" size={24} />,
     isCritical: true,
     details: [
       '중요: 간병인 등록 시점부터 보험 청구가 가능합니다.',
@@ -25,13 +23,11 @@ const steps = [
   {
     title: '3. 입퇴원 서류 등록',
     desc: '퇴원후 병원에서 발급받은 입퇴원 확인서 및 관련 서류를 등록합니다.',
-    icon: <FileText className="text-primary" size={24} />,
     details: ['입퇴원 증명서 및 병원 서류 등록'],
   },
   {
     title: '4. 간병일지 작성',
     desc: '정확한 간병 시간 증빙을 위해 간병일지를 작성합니다.',
-    icon: <Clock className="text-primary" size={24} />,
     details: [
       '하루 8시간 이상의 간병 기록 필수 (보험 혜택 기준)',
       '의료 기록과 일치해야 하며, 불일치 시 보장이 어려울 수 있음'
@@ -40,7 +36,6 @@ const steps = [
   {
     title: '5. 보험 청구 서류 전달',
     desc: '작성된 일지와 발급된 서류를 담당 보험 설계사에게 직접 전송하여 청구를 완료합니다.',
-    icon: <AlertCircle className="text-primary" size={24} />,
     details: ['비대면 서류 전송 및 청구 접수 완료'],
   },
 ];
@@ -95,14 +90,7 @@ export default function GuideContent() {
                 : 'border-[#FFEDD5]'
             }`}>
               
-              <div className="flex flex-col md:flex-row md:items-start gap-6">
-                {/* Icon Section */}
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 ${
-                  step.isCritical ? 'bg-orange-100/50 text-orange-600' : 'bg-primary/5 text-primary'
-                }`}>
-                  {step.icon}
-                </div>
-
+              <div className="flex flex-col gap-6">
                 {/* Text Section */}
                 <div className="flex-1">
                   <div className="mb-4">
