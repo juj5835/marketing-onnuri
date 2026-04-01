@@ -25,7 +25,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col selection:bg-primary/20 selection:text-primary">
         {children}
-        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+        <GoogleAnalytics gaId="G-G5J5E7XWX9" />
       </body>
     </html>
   );
