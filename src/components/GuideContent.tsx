@@ -124,7 +124,7 @@ export default function GuideContent() {
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
