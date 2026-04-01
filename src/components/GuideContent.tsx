@@ -87,19 +87,17 @@ export default function GuideContent() {
             className="group"
           >
             {/* Content Card */}
-            <div className={`p-8 md:p-10 rounded-[32px] border bg-white relative overflow-hidden transition-all duration-500 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] ${
-              step.isCritical 
-                ? 'border-[#FFEDD5] border-l-[8px] border-r-[8px] border-l-orange-400 border-r-orange-400' 
+            <div className={`p-8 md:p-10 rounded-[32px] border bg-white relative overflow-hidden transition-all duration-500 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] ${step.isCritical
+                ? 'border-[#FFEDD5] border-l-[8px] border-r-[8px] border-l-orange-400 border-r-orange-400'
                 : 'border-[#FFEDD5]'
-            }`}>
-              
+              }`}>
+
               <div className="flex flex-col gap-6">
                 {/* Text Section */}
                 <div className="flex-1">
                   <div className="mb-4">
-                    <h3 className={`text-2xl font-black mb-2 ${
-                      step.isCritical ? 'text-orange-950' : 'text-text-deep'
-                    }`}>
+                    <h3 className={`text-2xl font-black mb-2 ${step.isCritical ? 'text-orange-950' : 'text-text-deep'
+                      }`}>
                       {step.title}
                     </h3>
                   </div>
@@ -111,9 +109,8 @@ export default function GuideContent() {
                   <ul className="space-y-4">
                     {step.details.map((detail, dIdx) => (
                       <li key={dIdx} className="flex items-start gap-3 text-[15px] font-medium text-text-muted">
-                        <div className={`mt-2 h-1.5 w-1.5 rounded-full shrink-0 ${
-                          step.isCritical ? 'bg-orange-400' : 'bg-primary/30'
-                        }`} />
+                        <div className={`mt-2 h-1.5 w-1.5 rounded-full shrink-0 ${step.isCritical ? 'bg-orange-400' : 'bg-primary/30'
+                          }`} />
                         <span className={detail.includes('중요') || detail.includes('필수') ? 'text-orange-600 font-bold' : ''}>
                           {detail}
                         </span>
@@ -133,23 +130,17 @@ export default function GuideContent() {
         viewport={{ once: true }}
         className="mt-24 p-10 rounded-[40px] text-center relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+        <div className="absolute top-0 right-0 w-80 h-80 " />
         <p className="text-text-body text-lg mb-10 relative z-10 max-w-md mx-auto font-medium">
           가족간병인 등록부터 서류 전송까지 <br />
           어플리케이션 안에서 원스톱으로 해결됩니다.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center items-center relative z-10">
-          <button 
+          <button
             onClick={() => setIsModalOpen(true)}
             className="w-full md:w-auto px-14 h-16 bg-primary text-white rounded-[16px] font-black text-lg hover:brightness-110 transition-all shadow-xl shadow-primary/20"
           >
             간병인 등록 하기
-          </button>
-          <button 
-            onClick={() => window.location.href = '/'}
-            className="w-full md:w-auto px-10 h-16 bg-slate-100 text-text-deep rounded-[16px] font-bold text-lg hover:bg-slate-200 transition-all border border-slate-200"
-          >
-            서비스 메인으로
           </button>
         </div>
       </motion.div>
@@ -192,7 +183,7 @@ export default function GuideContent() {
                 </p>
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="w-full py-4 bg-text-deep text-white rounded-2xl font-black text-lg hover:brightness-110 transition-all"
+                  className="w-full py-4 bg-text-deep text-white rounded-[16px] font-black text-lg hover:brightness-110 transition-all"
                 >
                   확인
                 </button>
