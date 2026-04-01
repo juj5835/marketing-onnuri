@@ -89,10 +89,10 @@ export default function GuideContent() {
             className="group"
           >
             {/* Content Card */}
-            <div className={`p-8 md:p-10 rounded-[32px] border relative overflow-hidden transition-all duration-500 ${
+            <div className={`p-8 md:p-10 rounded-[32px] border relative overflow-hidden transition-all duration-500 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] ${
               step.isCritical 
-                ? 'bg-gradient-to-r from-orange-50/50 to-white border-[#FFEDD5] border-l-[8px] border-l-orange-400 shadow-[0_20px_50px_rgba(251,146,60,0.12)]' 
-                : 'bg-white border-[#FFEDD5] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)]'
+                ? 'bg-orange-50/30 border-[#FFEDD5] border-l-[8px] border-r-[8px] border-l-orange-400 border-r-orange-400' 
+                : 'bg-white border-[#FFEDD5]'
             }`}>
               
               <div className="flex flex-col md:flex-row md:items-start gap-6">
