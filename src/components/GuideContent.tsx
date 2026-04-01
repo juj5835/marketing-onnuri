@@ -6,14 +6,14 @@ import { AlertCircle, Clock, FileText, UserPlus, Home } from 'lucide-react';
 
 const steps = [
   {
-    title: '1. 간병 상황 발생',
+    title: '간병 상황 발생',
     desc: '연로하신 부모님, 어린 자녀, 혹은 배우자가 입원하여 가족의 손길이 꼭 필요한 상황이 발생합니다.',
     icon: <Home className="text-primary" size={24} />,
     details: ['가족(부모, 자녀, 배우자) 입원 시'],
     img: '/images/hero_family_care_refined.png',
   },
   {
-    title: '2. 간병인 등록 (필수)',
+    title: '간병인 등록 (필수)',
     desc: '간병 업무를 시작하기 전 반드시 온누리케어에 간병인 등록을 완료해야 합니다.',
     icon: <UserPlus className="text-primary" size={24} />,
     isCritical: true,
@@ -25,14 +25,14 @@ const steps = [
     img: '/images/hero_family_care_refined.png',
   },
   {
-    title: '3. 입퇴원 서류 등록',
+    title: '입퇴원 서류 등록',
     desc: '병원에서 발급받은 입퇴원 확인서 및 관련 서류를 등록합니다.',
     icon: <FileText className="text-primary" size={24} />,
     details: ['입퇴원 증명서 및 병원 서류 등록'],
     img: '/images/hero_family_care_refined.png',
   },
   {
-    title: '4. 간병일지 작성',
+    title: '간병일지 작성',
     desc: '정확한 간병 시간 증빙을 위해 매일 간병일지를 작성합니다.',
     icon: <Clock className="text-primary" size={24} />,
     details: [
@@ -42,7 +42,7 @@ const steps = [
     img: '/images/hero_family_care_refined.png',
   },
   {
-    title: '5. 보험 청구 서류 전달',
+    title: '보험 청구 서류 전달',
     desc: '작성된 일지와 발급된 서류를 담당 보험 설계사에게 직접 전송하여 청구를 완료합니다.',
     icon: <AlertCircle className="text-primary" size={24} />,
     details: ['비대면 서류 전송 및 청구 접수 완료'],
@@ -59,9 +59,7 @@ export default function GuideContent() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-wider text-primary uppercase bg-primary/5 rounded-full border border-primary/20">
-          Step-by-Step Guide
-        </span>
+
         <h1 className="text-4xl md:text-6xl font-black text-text-deep leading-[1.1] mb-8">
           가족 간병비 <br className="md:hidden" />
           보상 받는 법
