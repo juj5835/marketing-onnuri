@@ -128,23 +128,23 @@ export default function GuideContent() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="mt-24 p-10 rounded-[40px] bg-text-deep text-white text-center relative overflow-hidden"
+        className="mt-24 p-10 rounded-[40px] text-center relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-        <p className="text-white/70 text-lg mb-10 relative z-10 max-w-md mx-auto">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+        <p className="text-text-body text-lg mb-10 relative z-10 max-w-md mx-auto font-medium">
           가족간병인 등록부터 서류 전송까지 <br />
           어플리케이션 안에서 원스톱으로 해결됩니다.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center items-center relative z-10">
           <button 
             onClick={() => window.location.href = '/'}
-            className="w-full md:w-auto px-14 h-16 bg-primary text-white rounded-2xl font-black text-lg hover:brightness-110 transition-all shadow-xl shadow-primary/20"
+            className="w-full md:w-auto px-14 h-16 bg-primary text-white rounded-[16px] font-black text-lg hover:brightness-110 transition-all shadow-xl shadow-primary/20"
           >
             간병인 등록 하기
           </button>
           <button 
             onClick={() => window.location.href = '/'}
-            className="w-full md:w-auto px-10 h-16 bg-white/10 text-white rounded-2xl font-bold text-lg hover:bg-white/20 transition-all border border-white/20"
+            className="w-full md:w-auto px-10 h-16 bg-slate-100 text-text-deep rounded-[16px] font-bold text-lg hover:bg-slate-200 transition-all border border-slate-200"
           >
             서비스 메인으로
           </button>
