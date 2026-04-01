@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Heart } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Heart, X } from 'lucide-react';
 
 const steps = [
   {
@@ -41,6 +42,8 @@ const steps = [
 ];
 
 export default function GuideContent() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="max-w-3xl mx-auto">
       {/* Simple Header */}
@@ -137,7 +140,7 @@ export default function GuideContent() {
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center items-center relative z-10">
           <button 
-            onClick={() => window.location.href = '/'}
+            onClick={() => setIsModalOpen(true)}
             className="w-full md:w-auto px-14 h-16 bg-primary text-white rounded-[16px] font-black text-lg hover:brightness-110 transition-all shadow-xl shadow-primary/20"
           >
             간병인 등록 하기
@@ -150,6 +153,54 @@ export default function GuideContent() {
           </button>
         </div>
       </motion.div>
+
+      {/* Preparation Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsModalOpen(false)}
+              className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative w-full max-w-sm bg-white rounded-[32px] p-8 shadow-2xl overflow-hidden"
+            >
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-6 right-6 p-2 rounded-full hover:bg-slate-100 transition-colors"
+              >
+                <X size={20} className="text-slate-400" />
+              </button>
+
+              <div className="text-center pt-4">
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-primary">
+                  <Heart size={32} fill="currentColor" />
+                </div>
+                <h3 className="text-2xl font-black text-text-deep mb-4">
+                  서비스 준비 중입니다
+                </h3>
+                <p className="text-text-body font-medium leading-relaxed mb-8">
+                  현재 더욱 안정적인 서비스 제공을 위해 <br />
+                  시스템 고도화 작업 중입니다. <br />
+                  <span className="text-primary font-bold">2026년 하반기</span> 정식 오픈 예정입니다.
+                </p>
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="w-full py-4 bg-text-deep text-white rounded-2xl font-black text-lg hover:brightness-110 transition-all"
+                >
+                  확인
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
