@@ -89,20 +89,26 @@ export default function GuideContent() {
             className="group"
           >
             {/* Content Card */}
-            <div className={`bg-white p-8 md:p-10 rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border relative overflow-hidden transition-all hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] ${
-              step.isCritical ? 'border-orange-400 border-2 bg-orange-50/10' : 'border-[#FFEDD5]'
+            <div className={`p-8 md:p-10 rounded-[32px] border relative overflow-hidden transition-all duration-500 ${
+              step.isCritical 
+                ? 'bg-gradient-to-r from-orange-50/50 to-white border-[#FFEDD5] border-l-[8px] border-l-orange-400 shadow-[0_20px_50px_rgba(251,146,60,0.12)]' 
+                : 'bg-white border-[#FFEDD5] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)]'
             }`}>
               
               <div className="flex flex-col md:flex-row md:items-start gap-6">
                 {/* Icon Section */}
-                <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center shrink-0">
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 ${
+                  step.isCritical ? 'bg-orange-100/50 text-orange-600' : 'bg-primary/5 text-primary'
+                }`}>
                   {step.icon}
                 </div>
 
                 {/* Text Section */}
                 <div className="flex-1">
                   <div className="mb-4">
-                    <h3 className="text-2xl font-black text-text-deep mb-2">
+                    <h3 className={`text-2xl font-black mb-2 ${
+                      step.isCritical ? 'text-orange-950' : 'text-text-deep'
+                    }`}>
                       {step.title}
                     </h3>
                   </div>
@@ -114,7 +120,9 @@ export default function GuideContent() {
                   <ul className="space-y-4">
                     {step.details.map((detail, dIdx) => (
                       <li key={dIdx} className="flex items-start gap-3 text-[15px] font-medium text-text-muted">
-                        <div className="mt-2 h-1.5 w-1.5 rounded-full bg-primary/30 shrink-0" />
+                        <div className={`mt-2 h-1.5 w-1.5 rounded-full shrink-0 ${
+                          step.isCritical ? 'bg-orange-400' : 'bg-primary/30'
+                        }`} />
                         <span className={detail.includes('중요') || detail.includes('필수') ? 'text-orange-600 font-bold' : ''}>
                           {detail}
                         </span>
