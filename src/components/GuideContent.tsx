@@ -1,7 +1,8 @@
 "use client";
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { AlertCircle, Clock, FileText, UserPlus, Home } from 'lucide-react';
+import { AlertCircle, Clock, FileText, UserPlus, Home, Heart } from 'lucide-react';
 
 const steps = [
   {
@@ -47,11 +48,25 @@ const steps = [
 export default function GuideContent() {
   return (
     <div className="max-w-3xl mx-auto">
+      {/* Simple Header */}
+      <nav className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center justify-center px-6 glass-effect" style={{ boxShadow: '0 4px 10px rgba(255, 237, 213, 0.3)' }}>
+        <div className="max-w-[1200px] mx-auto w-full flex justify-start items-center">
+          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+              <Heart size={18} fill="currentColor" />
+            </div>
+            <div className="text-xl font-bold text-text-dark tracking-tight">
+              온누리케어 <span className="text-text-muted font-medium text-lg">간병협회</span>
+            </div>
+          </Link>
+        </div>
+      </nav>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-20"
+        className="text-center mb-20 pt-10"
       >
         <h1 className="text-4xl md:text-5xl font-black text-text-deep leading-[1.2] mb-8">
           가족 간병비 <br className="md:hidden" />
