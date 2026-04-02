@@ -8,8 +8,8 @@ import { Heart, X } from 'lucide-react';
 const steps = [
   {
     title: '1. 간병 상황 발생',
-    desc: '연로하신 부모님, 어린 자녀, 혹은 배우자가 입원시 전문 간병인 대신 가족이 간병하는 상황이 발생합니다.',
-    details: ['가족(부모, 자녀, 배우자) 입원 시'],
+    desc: '연로하신 부모님, 어린 자녀, 혹은 배우자가 입원시 전문 간병인 대신 가족이 직접 간병을 맡게 되는 경우가 있습니다. 이때 간병인 보험에 가입되어 있더라도, ‘가족의 간병 사실을 어떻게 증명할 수 있을까?’라는 의문이 생기기 마련입니다.',
+    details: ['가족(부모, 자녀, 배우자) 입원 시 직접 간병 상황 발생', '가족 간병 증명 방법 확인 필요'],
   },
   {
     title: '2. 간병인 등록 ',
@@ -23,14 +23,14 @@ const steps = [
   },
   {
     title: '3. 입퇴원 서류 등록',
-    desc: '퇴원후 병원에서 발급받은 입퇴원 확인서 및 관련 서류를 등록합니다.',
-    details: ['입퇴원 증명서 및 병원 서류 등록'],
+    desc: '퇴원후 병원에서 발급받은 입퇴원 확인서 및 관련 서류를 사진으로 등록합니다.',
+    details: ['보험 청구에 필요한 서류 등록'],
   },
   {
     title: '4. 간병일지 작성',
     desc: '정확한 간병 시간 증빙을 위해 간병일지를 작성합니다.',
     details: [
-      '하루 8시간 이상의 간병 기록 필수 (보험 혜택 기준)',
+      '하루 8시간 이상의 간병 기록 필수 (보험 보장 기준)',
       '의료 기록과 일치해야 하며, 불일치 시 보장이 어려울 수 있음'
     ],
   },
@@ -88,8 +88,8 @@ export default function GuideContent() {
           >
             {/* Content Card */}
             <div className={`p-8 md:p-10 rounded-[32px] border bg-white relative overflow-hidden transition-all duration-500 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] ${step.isCritical
-                ? 'border-[#FFEDD5] border-l-[8px] border-r-[8px] border-l-orange-400 border-r-orange-400'
-                : 'border-[#FFEDD5]'
+              ? 'border-[#FFEDD5] border-l-[8px] border-r-[8px] border-l-orange-400 border-r-orange-400'
+              : 'border-[#FFEDD5]'
               }`}>
 
               <div className="flex flex-col gap-6">
