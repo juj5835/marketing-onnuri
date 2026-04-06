@@ -4,7 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const pretendard = localFont({
-  src: "../../public/fonts/subset-PretendardVariable-Regular.woff2",
+  src: "../../public/fonts/PretendardVariable.woff2",
   display: "swap",
   weight: "45 920",
   variable: "--font-pretendard-next",
