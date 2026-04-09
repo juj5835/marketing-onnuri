@@ -47,14 +47,14 @@ export default function Hero() {
             >
               {/* Heading */}
               <h1 className="text-[36px] md:text-[60px] font-bold tracking-tight text-text-deep leading-[1.2] md:leading-[68px] mb-[40px]">
-                가족간병 <br /><span className="text-primary">보험금 지급 청구</span> <br />
-                쉽고 편하게
+                가족 간병비 <br /><span className="text-primary">보험금 청구 방법</span> <br />
+                가장 쉽고 빠르게
               </h1>
 
               {/* Subheader */}
               <p className="text-base md:text-lg text-text-body font-medium leading-[1.6] md:leading-[29px] mb-[40px] max-w-xl">
-                가족간병 보험청구방법, 가장 쉽고 빠른 길을 안내합니다. <br className="hidden md:block" />
-                가족 간병인 등록부터 서류 발급, 설계사 전송까지 온누리케어가 통합 지원합니다.
+                가족 간병비 보험금 청구 및 보장 받는 법, 온누리케어가 통합 지원합니다. <br className="hidden md:block" />
+                가족 간병인 등록부터 디지털 간병일지 작성, 보험 설계사 전송까지 한 번에 해결하세요.
               </p>
 
               {/* CTA Button */}

@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Workflow from "@/components/Workflow";
 import FAQ from "@/components/FAQ";
 import { Heart } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "가족 간병비 보험금 청구 | 쉽고 빠른 온누리케어간병협회",
+  description: "가족 간병비 보험금 청구방법, 더 이상 고민하지 마세요. 온누리케어가 가족 간병인 등록부터 보험 보장 받는 법까지 원스톱으로 지원합니다.",
+};
 
 export default function Home() {
   return (
@@ -91,6 +97,33 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "가족 간병비 보험금 청구는 어떻게 하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "온누리케어에서 가족 간병인 등록부터 간병일지 작성, 서류 전송까지 한 번에 처리하실 수 있습니다. 전문 간병인 없이 가족이 직접 간병한 경우에도 보험금 청구가 가능하도록 도와드립니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "가족만 간병인으로 등록할 수 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "아니요. 가족뿐만 아니라 지인도 간병인으로 등록할 수 있습니다. 실제 간병이 이루어졌다면 보험 청구가 가능합니다."
+                }
+              }
+            ]
+          })
+        }}
+      />
     </main>
   );
 }

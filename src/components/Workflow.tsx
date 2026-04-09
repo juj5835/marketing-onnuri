@@ -26,11 +26,11 @@ export default function Workflow() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-[80px]">
           <h2 className="text-3xl md:text-[36px] font-black text-text-deep leading-tight">
-            가장 확실한 가족간병비 청구 방법, <br className="hidden md:block" />
-            온누리케어가 끝까지 함께합니다.
+            가장 확실한 가족 간병비 청구방법, <br className="hidden md:block" />
+            온누리케어가 끝까지 도와드립니다.
           </h2>
           <p className="text-text-body font-normal text-lg">
-            가장 쉽고 확실하게 보험 혜택을 받는 방법
+            가족 간병비 보험금 청구 및 정산, 가장 쉽고 확실하게 받는 법
           </p>
         </div>
 
